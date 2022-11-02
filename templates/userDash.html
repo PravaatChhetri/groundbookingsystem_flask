@@ -1,0 +1,33 @@
+{%extends 'index.html'%}
+
+{%block holder%}
+{%endblock%}
+{%block content%}
+<div class="container-fluid" style="background-color: rgb(23, 23, 23);">
+ 
+    <div class="container-fluid">
+      <div class="d-flex row col-sm-12  align-items-center">
+        <div class="container-fluid col-md-3 col-sm-12">
+          <div class="nav navpill fs-4 text-start flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
+            <button class="nav-link btn-outline-light active" id="v-pills-booking-tab" data-bs-toggle="pill" data-bs-target="#v-pills-booking" type="button" role="tab" aria-controls="v-pills-bookings" aria-selected="false">Make Booking</button>
+            <button class="nav-link btn-outline-light" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Edit Booking</button>
+            
+            
+          </div>
+        </div>
+        <div class="tab-content col-md-9 col-sm-12 text-center bg-black" id="v-pills-tabContent">
+          
+          <div class="tab-pane fade show active" id="v-pills-booking" role="tabpanel" aria-labelledby="v-pills-booking-tab" tabindex="0"> {%include 'makeBooking.html'%}</div>
+          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">{%include 'editBooking.html'%}
+            
+          </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+{%endblock%}
+
+
+
+ 

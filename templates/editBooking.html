@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+    <div class="container my-5 mx-auto">
+        <table class="table table-dark text-center align-content-center table-striped">
+            <thead>
+                <tr>
+                  
+                  <th scope="col">Ground</th>
+                  <th scope="col">Team 1</th>
+                  <th scope="col">Team 2</th>
+                  <th scope="col">Court</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Time Slot</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+                
+                </tr>
+              </thead>
+              <tbody>
+               
+                  {%for x in data.bookings%}
+                    <tr>
+                      <th scope="row">{{x.ground}}</th>
+                      <td>{{x.team_1}}</td>
+                      <td>{{x.team_2}}</td>
+                      <td>{{x.courtName}}</td>
+                      <td>{{x.date}}</td>
+                      <td>{{x.time}}</td>
+                      <td><Button class="btn btn-info" ><a class="nav-link" href="/editBooking/{{x.bId}}">Update</a></Button></td>
+                      <td><Button class="btn btn-danger" ><a class="nav-link" href="/deleteBooking/{{x.bId}}">Delete</a></Button></td>
+                    </tr>
+                  {%endfor%}
+               </tbody>
+          </table>
+    </div>
+
+  </div>

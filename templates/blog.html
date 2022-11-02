@@ -1,0 +1,43 @@
+{%extends 'index.html'%}
+
+{%block holder%}
+{%endblock%}
+
+{%block content%}
+  <!-- header -->
+  <div class="container-fluid col-12 text-center m-0"
+  style="background:url(../static/img/blog.jpg) fixed no-repeat; background-size: cover;background-position: center; height: 300px;">
+  <h1 class="text text-dark" style="padding-top: 5%; font-size: 5rem; font-weight: bold;"> Blog</h1>
+</div>
+<!-- end header -->
+ <!-- blog showcase -->
+<div class="container-fluid">
+  <h1 class="text-center fs-1 my-5">Remember Your <b style="color: rgb(255, 123, 0);">Good Old Days</b></h1>
+
+  <div class="container my-5 mx-auto">
+    <div class="row my-3">
+      {%for x in data.blogs %}
+          
+      <div class="col-lg-3 col-sm-12 my-5 mx-2">
+        <div class="card bg-dark" >
+          <img src="/blog/img/{{x.BId}}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{x.title}}</h5>
+            <p class="card-text">
+              {{x.author}}
+            </p>
+            <a href="/blog/{{x.BId}}" class="btn btn-outline-light">Learn More</a>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+
+    </div>
+
+  </div>
+
+</div>
+
+
+</div>
+{%endblock%}

@@ -1,0 +1,45 @@
+{%extends 'index.html'%}
+
+{%block holder%}
+  <div class="container-fluid p-0">
+    <!-- header -->
+    <div class="container-fluid col-12 text-center m-0"
+      style="background:url(../static/img/wallpaperflare.com_wallpaper.jpg) fixed no-repeat; background-size: cover;background-position: center; height: 300px;">
+      <h1 class="text" style="padding-top: 4%; font-weight: bold; font-size:500%;"> Booking</h1>
+    </div>
+<!-- end header -->
+  </div>
+{%endblock%}
+{%block content%}
+  <div class="container-fluid">
+
+    <div class="container my-5 mx-auto">
+        <table class="table table-dark text-center align-content-center table-striped">
+            <thead>
+                <tr>
+                  
+                  <th scope="col">Ground</th>
+                  <th scope="col">Team 1</th>
+                  <th scope="col">Team 2</th>
+                  <th scope="col">Court</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Time Slot</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%for x in data.bookings%}
+                <tr>
+                  <th scope="row">{{x.ground}}</th>
+                  <td>{{x.team_1}}</td>
+                  <td>{{x.team_2}}</td>
+                  <td>{{x.courtName}}</td>
+                  <td>{{x.date}}</td>
+                  <td>{{x.time}}</td>
+                </tr>
+                {%endfor%}
+               </tbody>
+          </table>
+    </div>
+
+  </div>
+{%endblock%}

@@ -1,0 +1,67 @@
+
+*{
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+.h-slide{
+    height:700px;
+    width: 100vw;
+}
+
+.navbar-fixed-top.scrolled {
+    background-color: #fff !important;
+    transition: background-color 200ms linear;
+}
+  
+.navbar-fixed-top.scrolled .nav-link {
+    color:#555;
+  }
+
+.nav-new:hover{
+    text-decoration: underline whitesmoke;
+    transition: 200ms linear;
+
+  }
+.card-detail{
+    background-color: black; 
+  }
+
+  @keyframes bounce { 0% { transform: translateY(0); } 25% { transform: translateY(-20px);} 50% {transform: translateY(-10px);} 75% {transform: translateY(-20px);} 100% {transform: translateY(-5px);} } 
+  .bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    }
+    
+    @media (min-width: 1025px) {
+    .h-custom-2 {
+    height: 80%;
+    }
+    }
+
+    .scrollHide::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .scrollHide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+      color: var(--bs-nav-pills-link-active-color);
+      background-color: #ee5d14;
+  }
+
+.nav-link{
+    color: white;
+}
+.navitem{
+  color:black;
+}
+.nav{
+  --bs-nav-link-hover-color: #e5760b;
+}

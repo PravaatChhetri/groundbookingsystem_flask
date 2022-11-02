@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GBS</title>
+  <link rel="shortcut icon" href="{{ url_for('static',filename='img/gbsLogo.png')}}" type="image/x-icon" />
+
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <!-- bootstrap link end -->
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
+  <!-- fontAwesome -->
+  <script src="https://kit.fontawesome.com/5f0d47ec1a.js" crossorigin="anonymous"></script>
+  <!-- end fontAwesome -->
+
+</head>
+
+<body style="background-color:black;">
+  <div class="container-fluid p-0">
+    <!-- navbar start -->
+    <nav class="navbar fs-4 navbar-expand-lg navbar-dark p-0" style="background-color: rgba(0, 0, 0, 0)">
+      <a class="navbar-brand" href="#"><img src="{{url_for('static',filename='img/gbsLogo.png')}}" height="50%"
+          width="50%" ms-5 alt="" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse justify-content-evenly ps-5" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-center">
+          {%if data.role_status=="Admin"%}
+          <li class="nav-item px-lg-3 ">
+            <a class="nav-link {{data.g}}" href="/gamesCouncillor-Dashboard">Admin-DashBoard</a>
+          </li>
+          {%endif%}
+          {%if data.role_status=='User'%}
+          <li class="nav-item px-lg-3 ">
+            <a class="nav-link {{data.g}}" href="/User-Dashboard">DashBoard</a>
+          </li>
+          {%endif%} 
+          <li class="nav-item px-lg-3">
+            <a class="nav-link {{data.a}}" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item px-lg-3">
+            <a class="nav-link {{data.b}}" href="/blog">Blog</a>
+          </li>
+          
+          <li class="nav-item px-lg-3">
+            <a class="nav-link {{data.d}}" href="/booking">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{data.e}}" href="/aboutUs"> About Us </a>
+          </li>
+        </ul>
+        <form action="" class="d-flex">
+          <button class="nav-item {{data.f}} {{data.n}} btn btn-outline-light fs-4 ">
+            {%if data.role_status=='User' or data.role_status=='Admin'%}
+            <a href="/logout" class="nav-link ">Logout</a>
+            {%else%}
+            <a href="/login" class="nav-link ">Login</a>
+            {%endif%}
+
+          </button>
+        </form>
+      </div>
+    </nav>
+
+
+    {%block holder%}{%endblock%}
+  </div>
+  <!-- navbar ends -->
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+  <div class="text-center row">
+    <div class="col-3"></div>
+    <div class="col-6 alert alert-{{category}} alert-dismissible fade show" role="alert">
+      {{message}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+
+
+  <!-- container starts -->
+  {%block content%}{%endblock%}
+
+  <!-- container-ends -->
+  <hr\>
+    <!-- footer -->
+    <div class="container-fluid bg-black text-bg-dark row m-0 p-0">
+
+      <div class="col-lg-3 col-sm-12 text-sm-center py-sm-5">
+        <a href="#" class=""><img src="{{url_for('static',filename='img/gbsLogo.png')}}" height="250px" width="300px"
+            alt=""></a>
+      </div>
+
+      <div class="col-lg-2 offset-lg-1 offset-sm-5 col-sm-7 ps-4 py-sm-5 ">
+
+        <nav class="nav flex-column text-bg-dark bg-transparent fs-4 " style="background-color: rgba(0, 0, 0, 0)">
+          <ul class="navbar-nav">
+            {%if data.role_status=="Admin"%}
+            <li class="nav-item">
+              <a class="nav-link nav-new" href="/gamesCouncillor-Dashboard">Admin-DashBoard</a>
+            </li>
+            {%elif data.role_status=='User'%}
+            <li class="nav-item">
+              <a class="nav-link nav-new" href="/User-Dashboard">DashBoard</a>
+            </li>
+            {%endif%}  
+            <li class="nav-item">
+              <a class="nav-link nav-new active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-new" href="/blog">Blog</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link nav-new" href="/booking">Booking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-new" href="/aboutUs"> About Us </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+      <div class="col-lg-3 col-md-12 col-sm-12 py-sm-5">
+        <div class=" fs-4 mt-4 text-lg-start  text-sm-center">
+          <h4>Contact Information</h4>
+          <p>gamescouncillorcst@gmail.com</p>
+          <p>Contact No - +975 17008989</p>
+          <p>Address: CST, Rinchending, Chhukha</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-12 text-center py-sm-5 pe-3">
+        <div class="col-9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6775695543015!2d89.39180371499653!3d26.850205783154486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e3cb2c210e611d%3A0x44c5cb2cd32b18d4!2zQ29sbGVnZSBvZiBTY2llbmNlIGFuZCBUZWNobm9sb2d5IOC9muC9k-C8i-C9ouC9suC9guC8i-C9keC9hOC8i-C9oOC9leC-suC9tOC9o-C8i-C9ouC9suC9guC8i-C9mOC9kOC9vOC8i-C9ouC9suC9mOC8i-C9puC-s-C9vOC9luC8i-C9guC-suC-reC8jQ!5e0!3m2!1sen!2sbt!4v1665463941692!5m2!1sen!2sbt"
+            width="400px" height="300px" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- end footer -->
+
+    <!--Content JS-->
+    <script>
+
+    </script>
+
+    <!-- End Content JS -->
+
+    <!-- bootstrap script tag -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <!-- bootstrap end script tag -->
+</body>
+
+</html>

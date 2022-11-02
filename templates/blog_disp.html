@@ -1,0 +1,38 @@
+{%extends 'index.html'%}
+
+{%block holder%}
+{%endblock%}
+
+{%block content%}
+
+
+
+<div class="my-5 bg-black text-bg-light container-fluid row text-center">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb ms-5">
+          <li class="breadcrumb-item nav-item fs-4 ms-5"><a class="nav-item" href="\blog">Blog</a></li>
+          <li class="breadcrumb-item nav-item fs-4">{{data.blog.BId}}</li>
+        </ol>
+      </nav>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5">
+        <img src="/blog/img/{{data.blog.BId}}" class="img-fluid" alt="...">
+    </div>
+    <div class="col-lg-5 text-center">
+        <div class="col-lg-10 col-sm-12 px-3">
+
+            <h1 class="text-start fs-3"><b> {{data.blog.title}} </b></h1>
+            <p class="text-start fs-5">{{data.blog.content}}</p>
+            <p class="text-start text-muted">By {{data.blog.author}}</p>
+            
+        </div>    
+    </div>
+
+</div>
+
+
+
+
+
+
+{%endblock%}

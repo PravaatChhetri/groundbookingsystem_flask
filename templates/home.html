@@ -1,0 +1,84 @@
+{%extends 'index.html'%}
+
+{%block holder%}
+<img src="{{url_for('static', filename='img/background.jpg')}}" class="col-lg-12" style="margin-top: -22%" height="100%" width="100%" alt="" />
+
+{%endblock%}
+{%block content%}
+<div class="container-fluid bg-black text-bg-dark col-sm-12 col-md-12 p-0">
+    <!-- 3 icons -->
+    <div class="container-fluid">
+
+      <div class="row col-12 pt-5">
+        <div class="col-lg-4 col-sm-12 text-center">
+          <div class="card text-center h-75 align-middle card-detail">
+            <div class="card-body">
+              <h1 class="card-title" style="font-size: 5em; margin: 5% 0%">
+                <i class="fa-solid fa-magnifying-glass-location"></i>
+              </h1>
+              <h5 class="card-title fs-3" style="font-weight: bold; color: rgb(255, 123, 0);">
+                Search
+              </h5>
+              <p class="card-text">
+                Search the ground you want to book anytime from anywhere.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-12 text-center">
+          <div class="card text-center h-75 align-middle card-detail">
+            <div class="card-body">
+              <h1 class="card-title" style="font-size: 5em; margin: 5% 0%">
+                <i class="fa-solid fa-book" style="color: rgb(255, 123, 0);"></i>
+              </h1>
+              <h5 class="fs-3" style="font-weight: bold;">Book</h5>
+              <p class="card-text">
+                Once you get the ground you want to book, book the ground
+                within instance of time
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-12 text-center">
+          <div class="card text-center h-75 align-middle card-detail">
+            <div class="card-body">
+              <h1 class="card-title" style="font-size: 5em; margin: 5% 0%">
+                <i class="fa-solid fa-futbol"></i>
+              </h1>
+              <h5 class="fs-3" style="font-weight: bold; color: rgb(255, 123, 0);">Play</h5>
+              <p class="card-text">
+                You can play hard. No need to work hard to book ground,
+                instead work hard on the ground.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of three icons -->
+
+    <div class="container mt-5">
+      <h2 class="text-center col-12 pt-5 mx-auto">Sports <b style="color: rgb(255, 123, 0);">News</b></h2>
+      <div class="container-fluid py-2">  
+      <div class="d-flex flex-row flex-nowrap overflow-auto scrollHide" >
+          {%for x in data.news %}
+          
+          <div class="col-lg-3 col-sm-12 my-xl-5 mx-3">
+            <div class="card bg-dark" >
+              <img src="{{x['urlToImage']}}" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">{{x['title']}}</h5>
+                <p class="card-text">
+                  {{x['author']}}
+                </p>
+                <a href="{{x['url']}}" class="btn btn-outline-light">Learn More</a>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+
+        </div>
+      </div>  
+    </div>
+  </div>
+{%endblock%}

@@ -1,0 +1,22 @@
+<div class="container my-5 mx-auto">
+    <div class="row my-3">
+      {%for x in data.blogs %}
+          
+      <div class="col-lg-3 col-sm-12 my-5 mx-2">
+        <div class="card bg-dark" >
+          <img src="/blog/img/{{x.BId}}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{x.title}}</h5>
+            <p class="card-text">
+              {{x.author}}
+            </p>
+            <a href="/editBlog/{{x.BId}}" class="btn btn-outline-info">Update</a>
+            <a href="/deleteBlog/{{x.BId}}" class="btn btn-outline-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+
+    </div>
+
+  </div>
