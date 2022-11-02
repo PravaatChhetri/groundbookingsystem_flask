@@ -29,7 +29,6 @@ Flask-SQLAlchemy==3.0.2
 Flask-WTF==1.0.1
 future==0.18.2
 gcloud==0.18.3
-GNOME-AppFolders-Manager==0.4.7
 google-api-core==2.10.0
 google-api-python-client==2.60.0
 google-auth==2.3.2
