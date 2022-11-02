@@ -5,7 +5,6 @@ autopep8==1.7.0
 bcrypt==4.0.0
 beautifulsoup4==4.11.1
 blinker==1.5
-btrfsutil==5.19.1
 cachetools==5.2.0
 caffeine-ng==4.0.2
 certifi==2022.9.24
