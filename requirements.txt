@@ -61,7 +61,6 @@ platformdirs==2.5.2
 ply==3.11
 protobuf==4.21.7
 pulsectl==22.3.2
-pwquality==1.4.4
 pyaml==21.10.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
